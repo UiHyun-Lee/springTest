@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+
+<!-- 헤더 -->
+<header id='main_header'>
+    <!-- 네비 -->
+    <nav id="main_nav">
+        <div id="nav_item">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="language.html">Languages</a></li>
+                <li class="login_func">Login</li>
+                <li><a href="board.html">Board</a></li>
+                <li class="sear_func">Search</li>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- form -->
+<div id="title"><b>Hello World!</b></div>
+<div id="main_img"></div>
+
+<!--로그인-->
+<section class="login-form">
+    <article>
+        <form>
+            <input type="text" name="email" class="text-field" placeholder="아이디">
+            <input type="password" name="password" class="text-field" placeholder="비밀번호">
+            <input type="submit" value="로그인" class="submit-btn">
+        </form>
+    </article>
+    <article>
+        <div class="links">
+            <a href="#">비밀번호를 잊어버리셨나요?</a>
+        </div>
+    </article>
+</section>
+
+<!--검색창-->
+<section class="sear-form">
+    <article>
+        <form>
+            <input type="text" name="search" class="text-field" placeholder="검색어를 입력하세요.">
+            <input type="submit" value="검색" class="submit-btn">
+        </form>
+    </article>
+</section>
+
+<!-- sign up -->
+<div class="sub_title">Sign up</div>
+
+<section class="signup_wrap">
+    <article class="signups">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" placeholder="이름" name="signups_name"></td>
+            </tr>
+            <tr>
+                <td>Id</td>
+                <td><input type="text" placeholder="아이디" name="signups_id"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="비밀번호" id="signups_pw" name="signups_pw"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" placeholder="비밀번호 확인" id="signups_pw_ch" name="signups_pw_ch"
+                           onkeyup="pw_ch()"><br><span id="signups_pw_text"></span></td>
+            </tr>
+            <tr>
+                <td>Student Id</td>
+                <td><input type="number" placeholder="학번" name="signups_number"></td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td>
+                    <select name="phone" id="phone1">
+                        <option value="+82">+82</option>
+                        <option value="+49">+49</option>
+                        <option value="+27">+27</option>
+                        <option value="+80">+80</option>
+                    </select>
+                    -
+                    <input type="text" name="phone2" id="phone2" class="phone">
+                    -
+                    <input type="text" name="phone3" id="phone3" class="phone">
+                </td>
+            </tr>
+            <tr>
+                <td>Adderess</td>
+                <td><input type="text" placeholder="주소" name="signups_adder"></td>
+            </tr>
+            <tr>
+                <td class="spans" colspan=2>
+                    <button id="sub_btn">Submit</button>
+                    <button id="can_btn">Cancel</button>
+                </td>
+
+            </tr>
+        </table>
+    </article>
+</section>
+
+<script type="text/javascript" src="script/script.js"></script>
+
+<footer>
+    <div class="footer">
+        All Contents Copyright© MaxLee. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

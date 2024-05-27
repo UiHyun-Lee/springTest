@@ -23,7 +23,7 @@ public class SecurityService {
 
     public String createToken(String subject, long expTime){
         if(expTime <= 0){
-            throw new RuntimeException("Expiretime is less then 0");
+            throw new RuntimeException("Exptime is less then 0");
         }
 
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;

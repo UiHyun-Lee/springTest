@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/language.css}" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+<!-- 헤더 -->
+<header id='main_header'>
+    <!-- 네비 -->
+    <nav id="main_nav">
+        <div id="nav_item">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="language.html">Languages</a></li>
+                <li class="login_func">Login</li>
+                <li><a href="board.html">Board</a></li>
+                <li class="sear_func">Search</li>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- form -->
+<div id="title"><b>Hello World!</b></div>
+<div id="main_img"></div>
+<div class="login-form">
+    <form>
+        <input type="text" name="email" class="text-field" placeholder="아이디">
+        <input type="password" name="password" class="text-field" placeholder="비밀번호">
+        <input type="submit" value="로그인" class="submit-btn">
+    </form>
+
+    <div class="links">
+        <a href="#">비밀번호를 잊어버리셨나요?</a>
+    </div>
+</div>
+
+<div class="sear-form">
+    <form>
+        <input type="text" name="search" class="text-field" placeholder="검색어를 입력하세요.">
+        <input type="submit" value="검색" class="submit-btn">
+    </form>
+</div>
+
+<div class="sub_title" id="sub_t">Languages</div>
+
+<!-- explain -->
+<div id="exp">
+    <section id="paras">
+        <article class="items">
+            <div class="para">
+                <div class="logo" id="hreflogo"><img src="img/hlogo.png" alt="img" title="img"></div>
+                <div class="txt">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris
+                        nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt
+                        mollit
+                        anim
+                        id
+                        est laborum."</p>
+                </div>
+            </div>
+        </article>
+        <article class="items2">
+            <div class="para2">
+                <div class="logo"><img src="img/pythonlogo.png" alt="img" title="img"></div>
+                <div class="txt">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit
+                        anim
+                        id
+                        est
+                        laborum."</p>
+                </div>
+            </div>
+        </article>
+        <article class="items">
+            <div class="para">
+                <div class="logo"><img src="img/clogo.png" alt="img" title="img"></div>
+                <div class="txt">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit
+                        anim
+                        id
+                        est
+                        laborum."</p>
+                </div>
+            </div>
+        </article>
+        <article class="items2">
+            <div class="para2">
+                <div class="logo"><img src="img/javalogo.png" alt="img" title="img"></div>
+                <div class="txt">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit
+                        anim
+                        id
+                        est
+                        laborum."</p>
+                </div>
+            </div>
+        </article>
+        <article class="items">
+            <div class="para">
+                <div class="logo"><img src="img/mllogo.png" alt="img" title="img"></div>
+                <div class="txt">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut
+                        labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex
+                        ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit
+                        anim
+                        id
+                        est
+                        laborum."</p>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+
+<script type="text/javascript" src="script/script.js"></script>
+
+<footer>
+    <div class="footer">
+        All Contents Copyright© MaxLee. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/board.css}" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+<!-- 헤더 -->
+<header id='main_header'>
+    <!-- 네비 -->
+    <nav id="main_nav">
+        <div id="nav_item">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="language.html">Languages</a></li>
+                <li class="login_func">Login</li>
+                <li><a href="board.html">Board</a></li>
+                <li class="sear_func">Search</li>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- form -->
+<div id="title"><b>Hello World!</b></div>
+<div id="main_img"></div>
+
+<!--로그인-->
+<section class="login-form">
+    <article>
+        <form>
+            <input type="text" name="email" class="text-field" placeholder="아이디">
+            <input type="password" name="password" class="text-field" placeholder="비밀번호">
+            <input type="submit" value="로그인" class="submit-btn">
+        </form>
+    </article>
+    <article>
+        <div class="links">
+            <a href="#">비밀번호를 잊어버리셨나요?</a>
+        </div>
+    </article>
+</section>
+
+<!--검색창-->
+<section class="sear-form">
+    <article>
+        <form>
+            <input type="text" name="search" class="text-field" placeholder="검색어를 입력하세요.">
+            <input type="submit" value="검색" class="submit-btn">
+        </form>
+    </article>
+</section>
+
+<div class="board_title">Board</div>
+
+<!-- board -->
+<section id="tab">
+    <table class="mtab">
+        <thead>
+        <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="board1_view.html" title="board1">Lorem ipsum dolor sit amet</a></td>
+            <td>Tom</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="board2_view.html" title="board2">consectetur adipiscing</a></td>
+            <td>Peter</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="board3_view.html" title="board3">sed do eiusmod</a></td>
+            <td>John</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="board4_view.html" title="board4">incididunt ut</a></td>
+            <td>Alex</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="board5_view.html" title="board5">reprehenderit</a></td>
+            <td>Fernando</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="board6_view.html" title="board6">dolore magna</a></td>
+            <td>Pole</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="board7_view.html" title="board7">Duis aute</a></td>
+            <td>jackson</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><a href="board8_view.html" title="board8">voluptate</a></td>
+            <td>Klaus</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><a href="board9_view.html" title="board9">occaecat cupidatat non</a></td>
+            <td>Oto</td>
+            <td>2021-12-31</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><a href="board10_view.html" title="board10">sunt in culpa qui</a></td>
+            <td>Valentino</td>
+            <td>2021-12-31</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<script type="text/javascript" src="script/script.js"></script>
+
+<footer>
+    <div class="footer">
+        All Contents Copyright© MaxLee. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

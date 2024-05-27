@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<th:block th:fragment="config">-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" th:href="@{../static/css/main.css}">-->
+<!--&lt;!&ndash;    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">&ndash;&gt;-->
+<!--    <script th:src="@{/static/script.js}"></script>-->
+<!--</th:block>-->
+
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="../static/css/main.css">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+<!-- 헤더 -->
+<header id='main_header'>
+    <!-- 네비 -->
+    <nav id="main_nav">
+        <div id="nav_item">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="language.html">Languages</a></li>
+                <li class="login_func">Login</li>
+                <li><a href="board.html">Board</a></li>
+                <li class="sear_func">Search</li>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div id="title"><b>Hello World!</b></div>
+<div id="main_img"><a href="language.html#hreflogo">HTML</a></div>
+
+<!--로그인-->
+<section class="login-form">
+    <article>
+        <form>
+            <input type="text" name="email" class="text-field" placeholder="아이디">
+            <input type="password" name="password" class="text-field" placeholder="비밀번호">
+            <input type="submit" value="로그인" class="submit-btn">
+        </form>
+    </article>
+    <article>
+        <div class="links">
+            <a href="#">비밀번호를 잊어버리셨나요?</a>
+        </div>
+    </article>
+</section>
+
+<!--검색창-->
+<section class="sear-form">
+    <article>
+        <form>
+            <input type="text" name="search" class="text-field" placeholder="검색어를 입력하세요.">
+            <input type="submit" value="검색" class="submit-btn">
+        </form>
+    </article>
+</section>
+
+<div id="main_img2"></div>
+
+<section>
+    <article>
+        <a href="language.html#hreflogo">
+            <div id="sub_img">
+                <div id="main_python">Python<br>Versatile Language.</div>
+                <div id="main_ml">Machine Learning<br>For Future.</div>
+                <div id="main_code">Java<br>Object-Oriented Programming.</div>
+                <div id="main_c">C<br>Powerful Language.</div>
+            </div>
+        </a>
+    </article>
+</section>
+
+<script type="text/javascript" src="/static/script.js"></script>
+
+<footer>
+    <div class="footer">
+        All Contents Copyright© Uihyun Lee. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

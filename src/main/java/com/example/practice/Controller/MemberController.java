@@ -19,13 +19,24 @@ public class MemberController {
 
     @GetMapping("/")
     public String home(){
-        return "home";
-    }
-    @GetMapping("/members/login")
-    public String loginForm(){
-        return "members/loginMemberForm";
+        return "main";
     }
 
+    @GetMapping("/members/new")
+    public String createForm(){
+        return "createMemberForm";
+    }
+    @PostMapping("/members/new")
+    public String create(MemberForm form) {
+        memberService.join(form);
+        return "home";
+//        return "loginMemberForm";
+    }
+
+    @GetMapping("/members/login")
+    public String loginForm(){
+        return "main";
+    }
     @PostMapping("/members/login")
     public String login(MemberForm form, Model model) {
         MemberForm memberForm = memberService.login(form);
@@ -33,20 +44,10 @@ public class MemberController {
             model.addAttribute("memberform", memberForm.getJwt());
             return "home";
         }else{
-            return "members/loginMemberForm";
+        return "loginMemberForm";
         }
     }
-//    @GetMapping("/members/new")
-//    public String loginForm(){
-//        return "createMemberForm";
-//    }
-//
-//    @PostMapping("/members/new")
-//    public String login(MemberForm form) {
-//        memberService.join(form);
-//        return "home";
-//    }
-//
+
 }
 
 

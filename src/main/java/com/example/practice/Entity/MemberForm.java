@@ -14,4 +14,6 @@ public class MemberForm {
     private String password;
 
     private String nickname;
+
+    private String jwt;
 }
