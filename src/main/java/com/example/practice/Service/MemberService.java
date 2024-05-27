@@ -11,8 +11,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Optional;
 
-enum userAuth{
+enum userAuth {
     ACTIVE("ACTIVE"), INACTIVE("INACTIVE");
     final private String auth;
 
@@ -27,13 +28,17 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    private final SecurityService securityService;
+
     @Autowired
-    public MemberService(MemberRepository memberRepository) {
+    public MemberService(MemberRepository memberRepository, SecurityService securityService) {
         this.memberRepository = memberRepository;
+        this.securityService = securityService;
     }
-    //    회원가입
+
     Long index = 0L;
-    public Long join(MemberForm memberForm){
+
+    public Long join(MemberForm memberForm) {
 
         Member member = new Member();
 
@@ -58,31 +63,56 @@ public class MemberService {
         return member.getId();
     }
 
-    public Long createMemberId(){
+    public Long createMemberId() {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
         Long id = ThreadLocalRandom.current().nextLong(Long.MAX_VALUE);
-        while(true){
-            if(memberRepository.findById(id).isEmpty()){
+        while (true) {
+            if (memberRepository.findById(id).isEmpty()) {
                 return id;
-            }else{
+            } else {
                 id = random.nextLong();
             }
         }
     }
 
+    public MemberForm login(MemberForm memberForm) {
+        NoMemberByEmail(memberForm);
+        NoMemberByPassword(memberForm);
+
+        String token = securityService.createToken(memberForm.getEmail(), 2 * 1000 * 60);
+        memberForm.setJwt(token);
+        return memberForm;
+    }
+
     private void ValidateDuplicateMemberByNickname(Member member) {//email 중복
         memberRepository.findByNickname(member.getNickname())
                 .ifPresent(m -> {
-                    throw new IllegalStateException("nickname exsists");
+                    throw new IllegalStateException("The nickname already exsists");
                 });
     }
 
     private void ValidateDuplicateMemberByEmail(Member member) {//nickname 중복
         memberRepository.findByEmail(member.getEmail())
                 .ifPresent(m -> {
-                    throw new IllegalStateException("email exists");
+                    throw new IllegalStateException("The email already exists");
                 });
     }
 
+    private void NoMemberByEmail(MemberForm memberForm) {
+        if (memberRepository.findByEmail(memberForm.getEmail())
+                .isEmpty()) {
+            throw new IllegalStateException("The email doesn't exist");
+        }
+    }
+
+    private void NoMemberByPassword(MemberForm memberForm) {
+        Optional<Object> optionalMember = memberRepository.findByEmail(memberForm.getEmail());
+        if (optionalMember.isPresent()) {
+            Member member = (Member) optionalMember.get();
+            if (!member.getPassword().equals(memberForm.getPassword())) {
+                throw new IllegalStateException("Wrong password");
+            }
+        }
+    }
 }
