@@ -4,10 +4,11 @@ import com.example.practice.Entity.MemberForm;
 import com.example.practice.Service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
-@RestController
+@Controller
 public class MemberController {
     private final MemberService memberService;
     @Autowired
@@ -17,7 +18,7 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String createForm(){
-        return "members/createMemberForm";
+        return "createMemberForm";
     }
 
     @PostMapping("/members/new")
