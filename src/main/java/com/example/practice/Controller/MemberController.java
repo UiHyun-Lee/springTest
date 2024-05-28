@@ -16,12 +16,6 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-
-    @GetMapping("/")
-    public String home(){
-        return "main";
-    }
-
     @GetMapping("/members/new")
     public String createForm(){
         return "createMemberForm";

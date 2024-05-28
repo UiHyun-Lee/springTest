@@ -15,14 +15,24 @@
 <header id='main_header'>
     <!-- 네비 -->
     <nav id="main_nav">
+<!--        <div id="nav_item">-->
+<!--            <ul>-->
+<!--                <li><a href="main.html">Home</a></li>-->
+<!--                <li><a href="language.html">Languages</a></li>-->
+<!--                <li class="login_func">Login</li>-->
+<!--                <li><a href="board.html">Board</a></li>-->
+<!--                <li class="sear_func">Search</li>-->
+<!--                <li><a href="signup.html">Sign up</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
         <div id="nav_item">
             <ul>
-                <li><a href="main.html">Home</a></li>
-                <li><a href="language.html">Languages</a></li>
+                <li><a th:href="@{/main}">Home</a></li>
+                <li><a th:href="@{/language}">Languages</a></li>
                 <li class="login_func">Login</li>
-                <li><a href="board.html">Board</a></li>
+                <li><a th:href="@{/board}">Board</a></li>
                 <li class="sear_func">Search</li>
-                <li><a href="signup.html">Sign up</a></li>
+                <li><a th:href="@{/signup}">Sign up</a></li>
             </ul>
         </div>
     </nav>
@@ -115,7 +125,8 @@
     </article>
 </section>
 
-<script type="text/javascript" src="script/script.js"></script>
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
 
 <footer>
     <div class="footer">
